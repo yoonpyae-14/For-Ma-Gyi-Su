@@ -1,0 +1,16 @@
+
+document.getElementById('nameForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const nameInput = document.getElementById('name');
+  const error = document.getElementById('error');
+  const value = nameInput.value.trim().toLowerCase().replace(/\s+/g, ' ');
+
+  if (value === 'su su san') {
+    error.textContent = '';
+    go(2);
+  } else {
+    error.textContent = 'Please enter: Su Su San 💜';
+    nameInput.focus();
+  }
+});
